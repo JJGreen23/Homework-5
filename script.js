@@ -1,4 +1,4 @@
-const usercurrentDate = document.getElementByuserID('currentDay');
+const usercurrentDate = document.getElementById('currentDay');
 
 userCurrentDate = moment().format("MMM Do YY");
 
@@ -87,9 +87,12 @@ $("#clearbutton").on("click", function () {
   
 $(".saveBtn").on("click", function (event) {
     event.preventDefault();
+
     let userIndex = $(this).siblings(".description").children().attr("userID");
+
     userToDoList[userIndex].userDataOBJ=$(this).siblings(".description").children().val();
     saveUserData();
+    
     plannerdisplay();
 });
 loadSavedUserData();
